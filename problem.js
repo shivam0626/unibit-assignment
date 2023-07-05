@@ -1,6 +1,4 @@
 // function to find the sum of two numbers which is equal to  target value
-// time complexity : O(n)
-// space complexity : O(1)
 function targetSum(arr, target){
     arr.sort((a,b)=> a - b); // sorting the array 
     let left = 0;   // defining the value of left pointer

@@ -24,25 +24,26 @@ function targetSum(arr, target){
     return res; // return the result
 }
 
-// function to find the combinations of values which sums target*2
+//function to find the combinations of values which sums target*2
 function findCombination(arr, target) {
     let doubleTarget = target * 2;  // double the  target
     let result = [];    // array to store result
   
     for (let i = 0; i < arr.length; i++) {
-        let combination = [];
-        let sum = arr[i];
+        let combination = []; // array to store combination
+        let sum = arr[i]; // 
   
         for (let j = i + 1; j < arr.length; j++) {
-            sum += arr[j];
+            sum += arr[j];  //sum the previous value with next value
             combination.push(arr[j]);
             if (sum === doubleTarget) {
-                result.push([arr[i]].concat(combination));
+                // if sum is equal to target
+                result.push([arr[i]].concat(combination)); // push the subarray to result array
             }
         }
     }
   
-    return result;
+    return result;  // return result
 }
 
 // defining the values of arr and target
@@ -52,11 +53,11 @@ let target = 4;
 let ans = targetSum(arr, target); // storing the result returned from targetSum function
 let flattenArr = ans.flat(); // flatten the ans
 flattenArr.sort((a,b) => a - b); // sorting the flatten array
-// console.log("First Combination For “4” :", ans); // consoling the the value of first combination
-// console.log("Merge Into a single Array :", flattenArr); // consoloing the values of merged array
+console.log("First Combination For “4” :", ans); // consoling the the value of first combination
+console.log("Merge Into a single Array :", flattenArr); // consoloing the values of merged array
 
 let combinationRes = findCombination(arr,target) ;
-console.log("Second Combination For “8” :", combinationRes); // consoling the 
+console.log("Second Combination For “8” :", combinationRes); // consoling the combination which is equal to target value
 
 
 
